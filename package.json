@@ -10,7 +10,7 @@
     "watch": "npm run style:watch & npm run script:watch",
     "style:watch": "node-sass --output-style compressed --include-path src/style --include-path node_modules -wr ./src/style -o ./dist/assets/style",
     "style:build": "node-sass --output-style compressed --include-path src/style --include-path node_modules ./src/style -o ./dist/assets/style",
-    "script:watch": "watch 'npm run script:build' src/script/",
+    "script:watch": "webpack -w",
     "script:build": "webpack"
   },
   "devDependencies": {
