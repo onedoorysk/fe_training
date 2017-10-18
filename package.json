@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
     "node-sass-cli": "0.0.4",
     "sanitize.css": "^5.0.0"
@@ -9,11 +10,14 @@
     "watch": "npm run style:watch & npm run script:watch",
     "style:watch": "node-sass --output-style compressed --include-path src/style --include-path node_modules -wr ./src/style -o ./dist/assets/style",
     "style:build": "node-sass --output-style compressed --include-path src/style --include-path node_modules ./src/style -o ./dist/assets/style",
-    "script:watch": "babel ./src/script -w -s --out-dir ./dist/assets/script",
-    "script:build": "babel ./src/script -s --out-dir ./dist/assets/script"
+    "script:watch": "webpack -w",
+    "script:build": "webpack"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.0"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.6.0"
   }
 }
